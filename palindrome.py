@@ -6,7 +6,7 @@ def simple_sentence(sentence):
 def number_of_characters(sentence):
     return len(sentence)
 
-def reverse(sentence, rev_sentence = []):
+def reverse(sentence, rev_sentence):
     num = number_of_characters(sentence)
     if num == 0:
         return rev_sentence
@@ -15,18 +15,16 @@ def reverse(sentence, rev_sentence = []):
 
 
 def is_palindrome(sentence):
-    # TODO: return True or False if the sentence is or isn't a palindrome
+    sentence = simple_sentence(sentence)
     num = number_of_characters(sentence)
     if num <= 1:
         return True
-    rev_sentence = reverse(sentence)
+    rev_sentence = reverse(sentence, [])
     return rev_sentence == list(sentence)
 
 
 def main():
-    # TODO: put your input/output code here
     sentence = input("Enter a phrase, sentence, or sentences: ")
-    sentence = simple_sentence(sentence)
     if is_palindrome(sentence):
         print("Your entry is a palindrome")
     else:
